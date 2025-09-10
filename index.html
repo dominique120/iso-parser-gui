@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/iso-parser-gui/index-871fb3897e794ce6.css" integrity="sha384-d5DrT8BzKAS/feoE6PxVly85+LuDCcq7UBsRpxMRso9Uz5qY4yHCTDx95EtEZGI5"/>
+    
+<script type="module">
+import init, * as bindings from '/iso-parser-gui/parser_gui-dc91c5972f425b20.js';
+const wasm = await init({ module_or_path: '/iso-parser-gui/parser_gui-dc91c5972f425b20_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script>
+    <title>ISO Message Parser</title>
+<link rel="modulepreload" href="/iso-parser-gui/parser_gui-dc91c5972f425b20.js" crossorigin="anonymous" integrity="sha384-mqlzsjrNj2CRaHr6NJscjW8TnY6qo3IcoYDDB3FFK8tG60yCQrZHL+J4A8H6mJ/z"><link rel="preload" href="/iso-parser-gui/parser_gui-dc91c5972f425b20_bg.wasm" crossorigin="anonymous" integrity="sha384-VJla0XORicFb6d/iwBlfPqVm+N2BTEsPZdJFAqd5vb2qofcVhXeRfnxWVqv+Gi6R" as="fetch" type="application/wasm"></head>
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+      function resizeCanvas() {
+        const canvas = document.getElementById('canvas');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize', resizeCanvas);
+      window.addEventListener('DOMContentLoaded', resizeCanvas);
+    </script>
+</body>
+</html>
